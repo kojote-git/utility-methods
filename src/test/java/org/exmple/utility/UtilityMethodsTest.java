@@ -4,6 +4,8 @@ import org.example.utility.UtilityMethods;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class UtilityMethodsTest {
 
@@ -35,5 +37,23 @@ public class UtilityMethodsTest {
         var result = UtilityMethods.multiply(a, b);
 
         assertEquals(2, result);
+    }
+
+    @Test
+    public void isEven_shouldReturnTrue() {
+        int a = 2;
+
+        var result = UtilityMethods.isEven(a);
+
+        assertTrue(result);
+    }
+
+    @Test
+    public void isEven_shouldReturnFalse() {
+        int a = 1;
+
+        var result = UtilityMethods.isEven(a);
+
+        assertFalse(result);
     }
 }
