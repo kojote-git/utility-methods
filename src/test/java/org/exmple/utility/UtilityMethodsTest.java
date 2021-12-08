@@ -16,4 +16,14 @@ public class UtilityMethodsTest {
 
         assertEquals(3, result);
     }
+
+    @Test
+    public void subtract_shouldSubtractTwoNumbers() {
+        int a = 1;
+        int b = 2;
+
+        var result = UtilityMethods.subtract(a, b);
+
+        assertEquals(-1, result);
+    }
 }
