@@ -56,4 +56,22 @@ public class UtilityMethodsTest {
 
         assertFalse(result);
     }
+
+    @Test
+    public void isOdd_shouldReturnTrue() {
+        int a = 1;
+
+        var result = UtilityMethods.isOdd(a);
+
+        assertTrue(result);
+    }
+
+    @Test
+    public void isOdd_shouldReturnFalse() {
+        int a = 2;
+
+        var result = UtilityMethods.isOdd(a);
+
+        assertFalse(result);
+    }
 }
