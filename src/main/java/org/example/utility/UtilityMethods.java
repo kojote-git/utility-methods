@@ -22,6 +22,6 @@ public final class UtilityMethods {
     }
 
     public static boolean isOdd(int a) {
-        return isEven(a);
+        return !isEven(a);
     }
 }
