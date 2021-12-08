@@ -14,7 +14,7 @@ public final class UtilityMethods {
     }
 
     public static int multiply(int a, int b) {
-        return a * b;
+        return b * a;
     }
 
     public static boolean isEven(int a) {
