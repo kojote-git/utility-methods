@@ -14,7 +14,11 @@ public final class UtilityMethods {
     }
 
     public static int multiply(int a, int b) {
-        return a * b;
+        int result = 0;
+        for (int i = 0; i < b; i++) {
+            result += a;
+        }
+        return result;
     }
 
     public static boolean isEven(int a) {
