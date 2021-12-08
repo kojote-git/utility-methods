@@ -14,7 +14,6 @@ public final class UtilityMethods {
     }
 
     public static int multiply(int a, int b) {
-        // TODO
-        return 0;
+        return a * b;
     }
 }

@@ -26,4 +26,14 @@ public class UtilityMethodsTest {
 
         assertEquals(-1, result);
     }
+
+    @Test
+    public void multiply_shouldMultiplyTwoNumbers() {
+        int a = 1;
+        int b = 2;
+
+        var result = UtilityMethods.multiply(a, b);
+
+        assertEquals(2, result);
+    }
 }
