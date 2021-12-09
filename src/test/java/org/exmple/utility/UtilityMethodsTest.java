@@ -14,7 +14,7 @@ public class UtilityMethodsTest {
         int a = 1;
         int b = 2;
 
-        var result = UtilityMethods.add(a, b);
+        int result = UtilityMethods.add(a, b);
 
         assertEquals(3, result);
     }
@@ -24,7 +24,7 @@ public class UtilityMethodsTest {
         int a = 1;
         int b = 2;
 
-        var result = UtilityMethods.subtract(a, b);
+        int result = UtilityMethods.subtract(a, b);
 
         assertEquals(-1, result);
     }
@@ -34,7 +34,7 @@ public class UtilityMethodsTest {
         int a = 1;
         int b = 2;
 
-        var result = UtilityMethods.multiply(a, b);
+        int result = UtilityMethods.multiply(a, b);
 
         assertEquals(2, result);
     }
@@ -43,7 +43,7 @@ public class UtilityMethodsTest {
     public void isEven_shouldReturnTrue() {
         int a = 2;
 
-        var result = UtilityMethods.isEven(a);
+        boolean result = UtilityMethods.isEven(a);
 
         assertTrue(result);
     }
@@ -52,7 +52,7 @@ public class UtilityMethodsTest {
     public void isEven_shouldReturnFalse() {
         int a = 1;
 
-        var result = UtilityMethods.isEven(a);
+        boolean result = UtilityMethods.isEven(a);
 
         assertFalse(result);
     }
@@ -61,7 +61,7 @@ public class UtilityMethodsTest {
     public void isOdd_shouldReturnTrue() {
         int a = 1;
 
-        var result = UtilityMethods.isOdd(a);
+        boolean result = UtilityMethods.isOdd(a);
 
         assertTrue(result);
     }
@@ -70,7 +70,7 @@ public class UtilityMethodsTest {
     public void isOdd_shouldReturnFalse() {
         int a = 2;
 
-        var result = UtilityMethods.isOdd(a);
+        boolean result = UtilityMethods.isOdd(a);
 
         assertFalse(result);
     }
