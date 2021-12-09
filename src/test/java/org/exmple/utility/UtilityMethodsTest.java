@@ -3,7 +3,10 @@ package org.exmple.utility;
 import org.example.utility.UtilityMethods;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertThrows;
 
 public class UtilityMethodsTest {
 
@@ -74,7 +77,7 @@ public class UtilityMethodsTest {
     }
 
     @Test
-    public void countEven_shouldReturnTrue() {
+    public void countEven_shouldCountEvenNumbers() {
         int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
         int result = UtilityMethods.countEven(array);
@@ -83,7 +86,7 @@ public class UtilityMethodsTest {
     }
 
     @Test
-    public void countEven_shouldReturnNullPointerException() {
+    public void countEven_shouldThrowNullPointerException() {
         int[] array = null;
 
         Exception exception = assertThrows(NullPointerException.class, () -> UtilityMethods.countEven(array));

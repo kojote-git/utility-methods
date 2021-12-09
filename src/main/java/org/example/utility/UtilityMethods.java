@@ -1,6 +1,6 @@
 package org.example.utility;
 
-import com.google.common.base.Preconditions;
+import static com.google.common.base.Preconditions.checkNotNull;
 
 public final class UtilityMethods {
     private UtilityMethods() {
@@ -28,10 +28,12 @@ public final class UtilityMethods {
     }
 
     public static int countEven(int[] array) {
-        Preconditions.checkNotNull(array, "Your array is null!");
+        checkNotNull(array, "Your array is null!");
         int evenElements = 0;
         for (int e : array) {
-            if (isEven(e)) evenElements++;
+            if (isEven(e)) {
+                evenElements++;
+            }
         }
         return evenElements;
     }
