@@ -74,4 +74,33 @@ public class UtilityMethodsTest {
 
         assertFalse(result);
     }
+
+    @Test
+    public void countOdd_shouldReturn4() {
+        int[] numbers = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 0};
+
+        int expected = 4;
+        int result = UtilityMethods.countOdd(numbers);
+
+        assertEquals(expected, result);
+
+    }
+
+    @Test
+    public void countOdd_shouldReturn0() {
+        int[] numbers = new int[]{12, 2, 16, 4, 54, 6, 90, 8, 0};
+
+        int expected = 0;
+        int result = UtilityMethods.countOdd(numbers);
+
+        assertEquals(expected, result);
+
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void countOdd_exceptionTesting() {
+
+        int result = UtilityMethods.countOdd(null);
+
+    }
 }

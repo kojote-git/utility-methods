@@ -1,5 +1,7 @@
 package org.example.utility;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
 public final class UtilityMethods {
     private UtilityMethods() {
         throw new AssertionError();
@@ -23,5 +25,15 @@ public final class UtilityMethods {
 
     public static boolean isOdd(int a) {
         return !isEven(a);
+    }
+
+    public static int countOdd(int[] array) {
+        checkNotNull(array);
+        int count = 0;
+        for (int j : array) {
+            if (isOdd(j))
+                count++;
+        }
+        return count;
     }
 }
