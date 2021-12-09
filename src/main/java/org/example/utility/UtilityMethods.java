@@ -1,5 +1,7 @@
 package org.example.utility;
 
+import java.util.Arrays;
+
 public final class UtilityMethods {
     private UtilityMethods() {
         throw new AssertionError();
@@ -23,5 +25,9 @@ public final class UtilityMethods {
 
     public static boolean isOdd(int a) {
         return !isEven(a);
+    }
+
+    public static int countNegative(int[] array) {
+        return (int) Arrays.stream(com.google.common.base.Preconditions.checkNotNull(array, "Array is null.")).filter(value -> value < 0).count();
     }
 }
