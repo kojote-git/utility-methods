@@ -1,5 +1,7 @@
 package org.example.utility;
 
+import com.google.common.base.Preconditions;
+
 public final class UtilityMethods {
     private UtilityMethods() {
         throw new AssertionError();
@@ -23,5 +25,14 @@ public final class UtilityMethods {
 
     public static boolean isOdd(int a) {
         return !isEven(a);
+    }
+
+    public static int countEven(int[] array) {
+        Preconditions.checkNotNull(array, "Your array is null!");
+        int evenElements = 0;
+        for (int e : array) {
+            if (isEven(e)) evenElements++;
+        }
+        return evenElements;
     }
 }

@@ -3,9 +3,7 @@ package org.exmple.utility;
 import org.example.utility.UtilityMethods;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class UtilityMethodsTest {
 
@@ -73,5 +71,26 @@ public class UtilityMethodsTest {
         boolean result = UtilityMethods.isOdd(a);
 
         assertFalse(result);
+    }
+
+    @Test
+    public void countEven_shouldReturnTrue() {
+        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+        int result = UtilityMethods.countEven(array);
+
+        assertEquals(5, result);
+    }
+
+    @Test
+    public void countEven_shouldReturnNullPointerException() {
+        int[] array = null;
+
+        Exception exception = assertThrows(NullPointerException.class, () -> UtilityMethods.countEven(array));
+
+        String expectedMessage = "Your array is null!";
+        String actualMessage = exception.getMessage();
+
+        assertTrue(actualMessage.contains(expectedMessage));
     }
 }
