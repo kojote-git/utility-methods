@@ -31,6 +31,13 @@ public final class UtilityMethods {
         return !isEven(a);
     }
 
+    public static int countOdd(int[] array) {
+        checkNotNull(array, "Array is null");
+        int count = 0;
+        for (int j : array) {
+            if (isOdd(j)) {
+                count++;
+            }
     public static int countEven(int[] array) {
         checkNotNull(array, "Your array is null!");
         int evenElements = 0;
