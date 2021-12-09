@@ -28,11 +28,12 @@ public final class UtilityMethods {
     }
 
     public static int countOdd(int[] array) {
-        checkNotNull(array);
+        checkNotNull(array, "Array is null");
         int count = 0;
         for (int j : array) {
-            if (isOdd(j))
+            if (isOdd(j)) {
                 count++;
+            }
         }
         return count;
     }
