@@ -3,10 +3,7 @@ package org.exmple.utility;
 import org.example.utility.UtilityMethods;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertThrows;
+import static org.junit.Assert.*;
 
 public class UtilityMethodsTest {
 
@@ -95,5 +92,35 @@ public class UtilityMethodsTest {
         String actualMessage = exception.getMessage();
 
         assertTrue(actualMessage.contains(expectedMessage));
+    }
+
+    @Test
+    public void copy_shouldReturnCopiedArray() {
+        int[] array = {1, 2, 3, -7};
+        boolean isEquals = true;
+
+        int[] expectedArray = {1, 2, 3, -7};
+        int[] actualArray = UtilityMethods.copy(array);
+
+        for (int i = 0; i < array.length; i++) {
+            if (expectedArray[i] != actualArray[i]) {
+                isEquals = false;
+                break;
+            }
+        }
+
+        assertTrue(isEquals);
+    }
+
+    @Test
+    public void copy_shouldThrowNullPointerException() {
+        int[] array = null;
+
+        Exception exception = assertThrows(NullPointerException.class, () -> UtilityMethods.copy(array));
+
+        String expectedMassage = "Array is null";
+        String actualMassage = exception.getMessage();
+
+        assertEquals(expectedMassage, actualMassage);
     }
 }
