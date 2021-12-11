@@ -37,4 +37,16 @@ public final class UtilityMethods {
         }
         return evenElements;
     }
+
+    public static int replace(int[] array, int element, int replacement) {
+        checkNotNull(array, "Your array is null!");
+        int count = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == element) {
+                array[i] = replacement;
+                count++;
+            }
+        }
+        return count;
+    }
 }

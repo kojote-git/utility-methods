@@ -96,4 +96,26 @@ public class UtilityMethodsTest {
 
         assertTrue(actualMessage.contains(expectedMessage));
     }
+
+    @Test
+    public void replace_shouldCountReplacedNumbers() {
+        int[] array = {1, 2, 1, 4, 5, 6, 1, 8, 9, 10};
+
+        int result = UtilityMethods.replace(array, 1, 2);
+
+        assertEquals(3, result);
+    }
+
+    @Test
+    public void result_shouldThrowNullPointerException() {
+        int[] array = null;
+
+        Exception exception = assertThrows(NullPointerException.class, () -> UtilityMethods.replace(array, 0, 1));
+
+        String expectedMessage = "Your array is null!";
+        String actualMessage = exception.getMessage();
+
+        assertTrue(actualMessage.contains(expectedMessage));
+    }
+
 }
