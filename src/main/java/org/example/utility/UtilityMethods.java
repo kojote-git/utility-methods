@@ -37,4 +37,15 @@ public final class UtilityMethods {
         }
         return evenElements;
     }
+
+    public static void reverse(int[] array) {
+        int temp;
+        int end = array.length - 1;
+        for (int i = 0; i < array.length / 2; i++) {
+            temp = array[end];
+            array[end] = array[i];
+            array[i] = temp;
+            end--;
+        }
+    } //Collections.reverse(Arrays.asList(array));  as easy way
 }
