@@ -2,6 +2,10 @@ package org.exmple.utility;
 
 import org.example.utility.UtilityMethods;
 import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+
+import java.util.Arrays;
+import java.util.Collections;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -95,5 +99,15 @@ public class UtilityMethodsTest {
         String actualMessage = exception.getMessage();
 
         assertTrue(actualMessage.contains(expectedMessage));
+    }
+
+    @Test
+    public void reverse() {
+        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int[] check = array;
+        UtilityMethods.reverse(array);
+        UtilityMethods.reverse(check);
+                Assertions.assertEquals(check, array);
+
     }
 }

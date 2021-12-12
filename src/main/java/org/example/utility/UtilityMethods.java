@@ -47,5 +47,5 @@ public final class UtilityMethods {
             array[i] = temp;
             end--;
         }
-    } //Collections.reverse(Arrays.asList(array));  as easy way
+    } //Collections.reverse(Arrays.asList(array));
 }
