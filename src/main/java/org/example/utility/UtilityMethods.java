@@ -41,9 +41,7 @@ public final class UtilityMethods {
     }
 
     public static int[] copy(int[] array){
-        if(Objects.isNull(array)){
-            throw new NullPointerException("Array is null");
-        }
+        checkNotNull(array,"Array is null");
         int size = array.length;
         int[] copiedArray = new int[size];
         System.arraycopy(array, 0, copiedArray, 0, size);

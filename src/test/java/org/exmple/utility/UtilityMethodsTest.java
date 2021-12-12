@@ -97,19 +97,14 @@ public class UtilityMethodsTest {
     @Test
     public void copy_shouldReturnCopiedArray() {
         int[] array = {1, 2, 3, -7};
-        boolean isEquals = true;
 
         int[] expectedArray = {1, 2, 3, -7};
         int[] actualArray = UtilityMethods.copy(array);
 
         for (int i = 0; i < array.length; i++) {
-            if (expectedArray[i] != actualArray[i]) {
-                isEquals = false;
-                break;
-            }
+            assertEquals(expectedArray[i], actualArray[i]);
         }
 
-        assertTrue(isEquals);
     }
 
     @Test
