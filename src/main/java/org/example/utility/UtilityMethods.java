@@ -2,6 +2,8 @@ package org.example.utility;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import java.util.Arrays;
+
 public final class UtilityMethods {
     private UtilityMethods() {
         throw new AssertionError();
@@ -56,5 +58,12 @@ public final class UtilityMethods {
         System.arraycopy(array, 0, copiedArray, 0, size);
 
         return copiedArray;
+    }
+
+    public static int countNegative(int[] array) {
+        checkNotNull(array, "Array is null.");
+        return (int) Arrays.stream(array)
+                .filter(value -> value < 0)
+                .count();
     }
 }

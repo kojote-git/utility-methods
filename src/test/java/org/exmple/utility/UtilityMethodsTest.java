@@ -139,4 +139,18 @@ public class UtilityMethodsTest {
 
         assertEquals(expectedMassage, actualMassage);
     }
+
+    @Test
+    public void countNegative_shouldReturnFive() {
+        int[] array = {-5, -4, -3, -2, -1, 0, 1, 2, 3};
+
+        int result = UtilityMethods.countNegative(array);
+        assertEquals(5, result);
+    }
+
+    @Test
+    public void countNegative_shouldReturnException() {
+        int[] array = null;
+        assertThrows(NullPointerException.class, () -> UtilityMethods.countNegative(array));
+    }
 }
