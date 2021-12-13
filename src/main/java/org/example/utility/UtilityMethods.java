@@ -37,4 +37,13 @@ public final class UtilityMethods {
         }
         return evenElements;
     }
+
+    public static int[] copy(int[] array){
+        checkNotNull(array,"Array is null");
+        int size = array.length;
+        int[] copiedArray = new int[size];
+        System.arraycopy(array, 0, copiedArray, 0, size);
+
+        return copiedArray;
+    }
 }
