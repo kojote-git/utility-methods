@@ -107,7 +107,7 @@ public class UtilityMethodsTest {
     }
 
     @Test
-    public void result_shouldThrowNullPointerException() {
+    public void replace_shouldThrowNullPointerException() {
         int[] array = null;
 
         Exception exception = assertThrows(NullPointerException.class, () -> UtilityMethods.replace(array, 0, 1));
