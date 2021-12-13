@@ -1,8 +1,8 @@
 package org.example.utility;
 
-import java.util.Arrays;
-
 import static com.google.common.base.Preconditions.checkNotNull;
+
+import java.util.Arrays;
 
 public final class UtilityMethods {
     private UtilityMethods() {
@@ -27,6 +27,26 @@ public final class UtilityMethods {
 
     public static boolean isOdd(int a) {
         return !isEven(a);
+    }
+
+    public static int countEven(int[] array) {
+        checkNotNull(array, "Your array is null!");
+        int evenElements = 0;
+        for (int e : array) {
+            if (isEven(e)) {
+                evenElements++;
+            }
+        }
+        return evenElements;
+    }
+
+    public static int[] copy(int[] array){
+        checkNotNull(array,"Array is null");
+        int size = array.length;
+        int[] copiedArray = new int[size];
+        System.arraycopy(array, 0, copiedArray, 0, size);
+
+        return copiedArray;
     }
 
     public static int countNegative(int[] array) {
