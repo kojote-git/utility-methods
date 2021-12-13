@@ -7,6 +7,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThrows;
+import static org.junit.Assert.assertNotNull;
 
 public class UtilityMethodsTest {
 
@@ -95,5 +96,20 @@ public class UtilityMethodsTest {
         String actualMessage = exception.getMessage();
 
         assertTrue(actualMessage.contains(expectedMessage));
+    }
+    @Test
+    public void countPositive_shouldCountPositiveNum() {
+        int[] array = {1,-1,2,-2,3,-3,4,-4,-5,5,-6,6,-7,7,-8,8,-9,9};
+
+        int result = UtilityMethods.countPositive(array);
+
+        assertEquals(9, result);
+    }
+    @Test
+    public void countPositive_shouldThrowNullPointerException() {
+        int[] array = null;
+
+        Exception exception = assertThrows(NullPointerException.class,() -> UtilityMethods.countPositive(array));
+        assertEquals("Your array is empty.",exception.getMessage());
     }
 }
