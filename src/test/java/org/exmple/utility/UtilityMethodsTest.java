@@ -114,4 +114,29 @@ public class UtilityMethodsTest {
 
         assertEquals("Your array is empty.", exception.getMessage());
     }
+
+    @Test
+    public void copy_shouldReturnCopiedArray() {
+        int[] array = {1, 2, 3, -7};
+
+        int[] expectedArray = {1, 2, 3, -7};
+        int[] actualArray = UtilityMethods.copy(array);
+
+        for (int i = 0; i < array.length; i++) {
+            assertEquals(expectedArray[i], actualArray[i]);
+        }
+
+    }
+
+    @Test
+    public void copy_shouldThrowNullPointerException() {
+        int[] array = null;
+
+        Exception exception = assertThrows(NullPointerException.class, () -> UtilityMethods.copy(array));
+
+        String expectedMassage = "Array is null";
+        String actualMassage = exception.getMessage();
+
+        assertEquals(expectedMassage, actualMassage);
+    }
 }
