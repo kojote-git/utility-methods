@@ -96,11 +96,4 @@ public class UtilityMethodsTest {
         assertEquals(expected, result);
 
     }
-
-    @Test(expected = NullPointerException.class)
-    public void countOdd_exceptionTesting() {
-
-        int result = UtilityMethods.countOdd(null);
-
-    }
 }
