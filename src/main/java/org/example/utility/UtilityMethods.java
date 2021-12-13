@@ -1,9 +1,6 @@
 package org.example.utility;
 
 import static com.google.common.base.Preconditions.checkNotNull;
-
-import static com.google.common.base.Preconditions.checkNotNull;
-
 import java.util.Arrays;
 
 public final class UtilityMethods {
@@ -38,6 +35,10 @@ public final class UtilityMethods {
             if (isOdd(j)) {
                 count++;
             }
+        }
+        return count;
+    }
+
     public static int countEven(int[] array) {
         checkNotNull(array, "Your array is null!");
         int evenElements = 0;
