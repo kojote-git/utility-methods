@@ -37,11 +37,12 @@ public final class UtilityMethods {
         }
         return evenElements;
     }
-    public static int countPositive(int [] array){
-        checkNotNull(array,"Your array is empty.");
+
+    public static int countPositive(int[] array) {
+        checkNotNull(array, "Your array is empty.");
         int countPositive = 0;
         for (int i : array) {
-            if(i > 0){
+            if (i > 0) {
                 countPositive++;
             }
         }
