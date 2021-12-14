@@ -162,4 +162,16 @@ public class UtilityMethodsTest {
         int[] array = null;
         assertThrows(NullPointerException.class, () -> UtilityMethods.countNegative(array));
     }
+
+    @Test
+    public void replace_shouldThrowNullPointerException() {
+        int[] array = null;
+
+        Exception exception = assertThrows(NullPointerException.class, () -> UtilityMethods.replace(array, 0, 1));
+
+        String expectedMessage = "Your array is null!";
+        String actualMessage = exception.getMessage();
+
+        assertTrue(actualMessage.contains(expectedMessage));
+    }
 }
