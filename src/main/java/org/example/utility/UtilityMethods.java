@@ -1,7 +1,8 @@
 package org.example.utility;
 
-import com.google.common.base.Preconditions;
+
 import java.util.Arrays;
+import static com.google.common.base.Preconditions.checkNotNull;
 
 public final class UtilityMethods {
     private UtilityMethods() {
@@ -67,7 +68,7 @@ public final class UtilityMethods {
     }
 
     public static void reverse(int[] array) {
-        Preconditions.checkNotNull(array);
+        checkNotNull(array);
         int end = array.length - 1;
         for (int i = 0; i < array.length / 2; i++) {
             int temp = array[end];
