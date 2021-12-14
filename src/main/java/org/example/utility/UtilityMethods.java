@@ -97,4 +97,17 @@ public final class UtilityMethods {
         }
         return count;
     }
+
+    public static int findIndex(int[] array, int number) {
+        int result = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == number) {
+                result = i;
+                break;
+            } else {
+                result = -1;
+            }
+        }
+        return result;
+    }
 }
