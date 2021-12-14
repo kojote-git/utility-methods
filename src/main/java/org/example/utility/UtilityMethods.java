@@ -2,6 +2,8 @@ package org.example.utility;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import java.util.Arrays;
+
 public final class UtilityMethods {
     private UtilityMethods() {
         throw new AssertionError();
@@ -43,10 +45,11 @@ public final class UtilityMethods {
         int count = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] == element) {
-                array[i] = replacement;
+                array[i] = replacement;x`
                 count++;
             }
         }
         return count;
     }
 }
+
