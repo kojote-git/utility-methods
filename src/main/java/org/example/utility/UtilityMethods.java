@@ -1,8 +1,7 @@
 package org.example.utility;
 
 import com.google.common.base.Preconditions;
-
-import static com.google.common.base.Preconditions.checkNotNull;
+import java.util.Arrays;
 
 public final class UtilityMethods {
     private UtilityMethods() {
@@ -38,6 +37,33 @@ public final class UtilityMethods {
             }
         }
         return evenElements;
+    }
+
+    public static int countPositive(int[] array) {
+        checkNotNull(array, "Your array is empty.");
+        int countPositive = 0;
+        for (int i : array) {
+            if (i > 0) {
+                countPositive++;
+            }
+        }
+        return countPositive;
+    }
+
+    public static int[] copy(int[] array){
+        checkNotNull(array,"Array is null");
+        int size = array.length;
+        int[] copiedArray = new int[size];
+        System.arraycopy(array, 0, copiedArray, 0, size);
+
+        return copiedArray;
+    }
+
+    public static int countNegative(int[] array) {
+        checkNotNull(array, "Array is null.");
+        return (int) Arrays.stream(array)
+                .filter(value -> value < 0)
+                .count();
     }
 
     public static void reverse(int[] array) {
