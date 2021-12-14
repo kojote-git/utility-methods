@@ -3,6 +3,8 @@ package org.exmple.utility;
 import org.example.utility.UtilityMethods;
 import org.junit.Test;
 
+import java.util.Arrays;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
@@ -152,5 +154,27 @@ public class UtilityMethodsTest {
     public void countNegative_shouldReturnException() {
         int[] array = null;
         assertThrows(NullPointerException.class, () -> UtilityMethods.countNegative(array));
+    }
+
+    @Test
+    public void compareByNegativeCount_shouldReturnOne() {
+        int[] a = {-5, -4, -3, -2, -1, 0, 1, 2, 3};
+        int[] b = {0, 1, 2, 3, 4, -6, -7, -8, -9};
+        int result = UtilityMethods.compareByNegativeCount(a, b);
+        assertEquals(1, result);
+    }
+
+    @Test
+    public void compareByNegativeCount_shouldReturnNullException() {
+        int[] a = null;
+        int[] b = {0, 1, 2, 3, 4, -6, -7, -8, -9};
+        assertThrows(NullPointerException.class, () -> UtilityMethods.compareByNegativeCount(a, b));
+    }
+
+    @Test
+    public void compareByNegativeCount_shouldReturnException() {
+        int[] a = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+        int[] b = {0, 1, 2, 3, 4, -6, -7, -8, -9};
+        assertThrows(ArrayIndexOutOfBoundsException.class, () -> UtilityMethods.compareByNegativeCount(a, b));
     }
 }

@@ -51,8 +51,8 @@ public final class UtilityMethods {
         return countPositive;
     }
 
-    public static int[] copy(int[] array){
-        checkNotNull(array,"Array is null");
+    public static int[] copy(int[] array) {
+        checkNotNull(array, "Array is null");
         int size = array.length;
         int[] copiedArray = new int[size];
         System.arraycopy(array, 0, copiedArray, 0, size);
@@ -65,5 +65,22 @@ public final class UtilityMethods {
         return (int) Arrays.stream(array)
                 .filter(value -> value < 0)
                 .count();
+    }
+
+    public static int compareByNegativeCount(int[] a, int[] b) {
+        // check arrays are not null
+        checkNotNull(a, "Your array is empty.");
+        checkNotNull(b, "Your array is empty.");
+        // check arrays have the same size
+        if (a.length == b.length) {
+            int first = countNegative(a);
+            int second = countNegative(b);
+            if (first > second) return 1;
+            if (first < second) return -1;
+            else return 0;
+        } else {
+            System.out.println("Your arrays are different.");
+            throw new ArrayIndexOutOfBoundsException();
+        }
     }
 }
