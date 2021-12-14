@@ -83,7 +83,7 @@ public final class UtilityMethods {
                 return 0;
             }
         } else {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Arrays have different sizes");
         }
     }
 
