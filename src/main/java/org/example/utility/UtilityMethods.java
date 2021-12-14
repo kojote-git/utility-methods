@@ -97,4 +97,13 @@ public final class UtilityMethods {
         }
         return count;
     }
+
+    public static int findMin(int[] array){
+        checkNotNull(array, "Array is null.");
+        int min = array[0];
+        for (int i : array)
+            if (i < min)
+                min = i;
+        return min;
+    }
 }
