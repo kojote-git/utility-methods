@@ -66,4 +66,15 @@ public final class UtilityMethods {
                 .filter(value -> value < 0)
                 .count();
     }
+
+    public static int countOdd(int[] array) {
+        checkNotNull(array, "Array is null");
+        int count = 0;
+        for (int j : array) {
+            if (isOdd(j)) {
+                count++;
+            }
+        }
+        return count;
+    }
 }
