@@ -107,15 +107,59 @@ public class UtilityMethodsTest {
     }
 
     @Test
-    public void replace_shouldThrowNullPointerException() {
-        int[] array = null;
+    public void countPositive_shouldCountPositiveNum() {
+        int[] array = {1, -1, 2, -2, 3, -3, 4, -4, -5, 5, -6, 6, -7, 7, -8, 8, -9, 9};
 
-        Exception exception = assertThrows(NullPointerException.class, () -> UtilityMethods.replace(array, 0, 1));
+        int result = UtilityMethods.countPositive(array);
 
-        String expectedMessage = "Your array is null!";
-        String actualMessage = exception.getMessage();
-
-        assertTrue(actualMessage.contains(expectedMessage));
+        assertEquals(9, result);
     }
 
+    @Test
+    public void countPositive_shouldThrowNullPointerException() {
+        int[] array = null;
+
+        Exception exception = assertThrows(NullPointerException.class, () -> UtilityMethods.countPositive(array));
+
+        assertEquals("Your array is empty.", exception.getMessage());
+    }
+
+    @Test
+    public void copy_shouldReturnCopiedArray() {
+        int[] array = {1, 2, 3, -7};
+
+        int[] expectedArray = {1, 2, 3, -7};
+        int[] actualArray = UtilityMethods.copy(array);
+
+        for (int i = 0; i < array.length; i++) {
+            assertEquals(expectedArray[i], actualArray[i]);
+        }
+
+    }
+
+    @Test
+    public void copy_shouldThrowNullPointerException() {
+        int[] array = null;
+
+        Exception exception = assertThrows(NullPointerException.class, () -> UtilityMethods.copy(array));
+
+        String expectedMassage = "Array is null";
+        String actualMassage = exception.getMessage();
+
+        assertEquals(expectedMassage, actualMassage);
+    }
+
+    @Test
+    public void countNegative_shouldReturnFive() {
+        int[] array = {-5, -4, -3, -2, -1, 0, 1, 2, 3};
+
+        int result = UtilityMethods.countNegative(array);
+        assertEquals(5, result);
+    }
+
+    @Test
+    public void countNegative_shouldReturnException() {
+        int[] array = null;
+        assertThrows(NullPointerException.class, () -> UtilityMethods.countNegative(array));
+    }
 }
