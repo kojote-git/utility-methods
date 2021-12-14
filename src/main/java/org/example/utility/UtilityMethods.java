@@ -1,5 +1,7 @@
 package org.example.utility;
 
+import com.google.common.base.Preconditions;
+
 import static com.google.common.base.Preconditions.checkNotNull;
 
 public final class UtilityMethods {
@@ -39,13 +41,13 @@ public final class UtilityMethods {
     }
 
     public static void reverse(int[] array) {
-        int temp;
+        Preconditions.checkNotNull(array);
         int end = array.length - 1;
         for (int i = 0; i < array.length / 2; i++) {
-            temp = array[end];
+            int temp = array[end];
             array[end] = array[i];
             array[i] = temp;
             end--;
         }
-    } //Collections.reverse(Arrays.asList(array));
+    }
 }
