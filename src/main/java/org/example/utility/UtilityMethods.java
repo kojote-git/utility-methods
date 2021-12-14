@@ -51,8 +51,8 @@ public final class UtilityMethods {
         return countPositive;
     }
 
-    public static int[] copy(int[] array) {
-        checkNotNull(array, "Array is null");
+    public static int[] copy(int[] array){
+        checkNotNull(array,"Array is null");
         int size = array.length;
         int[] copiedArray = new int[size];
         System.arraycopy(array, 0, copiedArray, 0, size);
@@ -82,5 +82,16 @@ public final class UtilityMethods {
             System.out.println("Your arrays are different.");
             throw new ArrayIndexOutOfBoundsException();
         }
+    }
+
+    public static int countOdd(int[] array) {
+        checkNotNull(array, "Array is null");
+        int count = 0;
+        for (int j : array) {
+            if (isOdd(j)) {
+                count++;
+            }
+        }
+        return count;
     }
 }
