@@ -215,4 +215,26 @@ public class UtilityMethodsTest {
         int[] b = {0, 1, 2, 3, 4, -6, -7, -8, -9};
         assertThrows(IllegalArgumentException.class, () -> UtilityMethods.compareByNegativeCount(a, b));
     }
+
+    @Test
+    public void findMin_shouldReturnSix() {
+        int[] array = {10, 20, 30, 40, 7, 70, 80, 6, 90, 100 , 34};
+
+        int result = UtilityMethods.findMin(array);
+        assertEquals(6, result);
+    }
+
+
+    @Test
+    public void findMin_shouldReturnException() {
+        int[] array = null;
+
+        Exception exception = assertThrows(NullPointerException.class, () -> UtilityMethods.findMin(array));
+
+        String expectedMassage = "Array is null.";
+        String actualMassage = exception.getMessage();
+
+        assertEquals(expectedMassage, actualMassage);
+    }
+
 }
