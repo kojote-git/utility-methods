@@ -99,6 +99,7 @@ public final class UtilityMethods {
     }
 
     public static int findIndex(int[] array, int number) {
+        checkNotNull(array, "Your array is null");
         int result = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] == number) {
