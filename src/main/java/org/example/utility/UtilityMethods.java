@@ -100,15 +100,14 @@ public final class UtilityMethods {
 
     public static int findIndex(int[] array, int number) {
         checkNotNull(array, "Your array is null");
-        int result = 0;
-        for (int i = 0; i < array.length; i++) {
+        int i = 0;
+        while (i < array.length) {
             if (array[i] == number) {
-                result = i;
-                break;
+                return i;
             } else {
-                result = -1;
+                i++;
             }
         }
-        return result;
+        return -1;
     }
 }
