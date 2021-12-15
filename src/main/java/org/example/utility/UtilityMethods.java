@@ -98,6 +98,36 @@ public final class UtilityMethods {
         return count;
     }
 
+    public static int compareByOddCount(int a[], int b[]) {
+        checkNotNull(a, "Array a is null.");
+        checkNotNull(b, "Array b is null.");
+        if (a.length == b.length) {
+            int countA = countOdd(a);
+            int countB = countOdd(b);
+            if (countA > countB) {
+                return 1;
+            }
+            if (countA < countB) {
+                return -1;
+            } else {
+                return 0;
+            }
+        } else {
+            throw new IllegalArgumentException("Arrays have different sizes");
+        }
+    }
+
+    public static void reverse(int[] array) {
+        checkNotNull(array, "Array is null, enter the correct value");
+        int end = array.length - 1;
+        for (int i = 0; i < array.length / 2; i++) {
+            int temp = array[end];
+            array[end] = array[i];
+            array[i] = temp;
+            end--;
+        }
+    }
+
     public static int findIndex(int[] array, int number) {
         checkNotNull(array, "Your array is null");
         int i = 0;
