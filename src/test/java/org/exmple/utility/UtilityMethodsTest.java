@@ -226,7 +226,7 @@ public class UtilityMethodsTest {
 
 
     @Test
-    public void findMin_shouldReturnException() {
+    public void findMin_shouldThrowNullPointerException() {
         int[] array = null;
 
         Exception exception = assertThrows(NullPointerException.class, () -> UtilityMethods.findMin(array));
