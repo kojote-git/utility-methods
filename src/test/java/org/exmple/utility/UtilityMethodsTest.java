@@ -215,4 +215,42 @@ public class UtilityMethodsTest {
         int[] b = {0, 1, 2, 3, 4, -6, -7, -8, -9};
         assertThrows(IllegalArgumentException.class, () -> UtilityMethods.compareByNegativeCount(a, b));
     }
+
+    @Test
+    public void compareByOddCount_shouldReturnOne(){
+        int[] a = {-5, -4, -3, -2, -1, 0, 1, 2, 3};
+        int[] b = {0, 1, 2, 3, 4, -6, -7, -8, -9};
+        int result = UtilityMethods.compareByOddCount(a, b);
+        assertEquals(1, result);
+    }
+
+    @Test
+    public void compareByOddCount_shouldReturnMinusOne(){
+        int[] a = {-8, -4, -3, -2, -6, 0, 1, 2, 3};
+        int[] b = {0, 1, 2, 3, 4, -6, -7, -8, -9};
+        int result = UtilityMethods.compareByOddCount(a, b);
+        assertEquals(-1, result);
+    }
+
+    @Test
+    public void compareByOddCount_shouldReturnZero(){
+        int[] a = {-7, -4, -3, -2, -6, 0, 1, 2, 3};
+        int[] b = {0, 1, 2, 3, 4, -6, -7, -8, -9};
+        int result = UtilityMethods.compareByOddCount(a, b);
+        assertEquals(0, result);
+    }
+
+    @Test
+    public void compareByOddCount_shouldThrowNullPointerException() {
+        int[] a = null;
+        int[] b = {-7, -4, -3, -2, -6, 0, 1, 2, 3};
+        assertThrows(NullPointerException.class, () -> UtilityMethods.compareByOddCount(a, b));
+    }
+
+    @Test
+    public void compareByOddCount_shouldThrowExceptionBecauseArraysHaveDifferentSize() {
+        int[] a = { 9, 10, 11, 12};
+        int[] b = {0, 1, 1, 2, 3, 4, 5, 6, 6};
+        assertThrows(IllegalArgumentException.class, () -> UtilityMethods.compareByOddCount(a, b));
+    }
 }

@@ -97,4 +97,23 @@ public final class UtilityMethods {
         }
         return count;
     }
+
+    public static int compareByOddCount(int a[], int b[]) {
+        checkNotNull(a, "Array a is null.");
+        checkNotNull(b, "Array b is null.");
+        if (a.length == b.length) {
+            int countA = countOdd(a);
+            int countB = countOdd(b);
+            if (countA > countB) {
+                return 1;
+            }
+            if (countA < countB) {
+                return -1;
+            } else {
+                return 0;
+            }
+        } else {
+            throw new IllegalArgumentException("Arrays have different sizes");
+        }
+    }
 }
