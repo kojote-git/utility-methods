@@ -80,6 +80,28 @@ public class UtilityMethodsTest {
     }
 
     @Test
+    public void countOdd_shouldReturn4() {
+        int[] numbers = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 0};
+
+        int expected = 4;
+        int result = UtilityMethods.countOdd(numbers);
+
+        assertEquals(expected, result);
+
+    }
+
+    @Test
+    public void countOdd_shouldReturn0() {
+        int[] numbers = new int[]{12, 2, 16, 4, 54, 6, 90, 8, 0};
+
+        int expected = 0;
+        int result = UtilityMethods.countOdd(numbers);
+
+        assertEquals(expected, result);
+
+    }
+
+    @Test
     public void countEven_shouldCountEvenNumbers() {
         int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
@@ -155,6 +177,82 @@ public class UtilityMethodsTest {
     public void countNegative_shouldReturnException() {
         int[] array = null;
         assertThrows(NullPointerException.class, () -> UtilityMethods.countNegative(array));
+    }
+
+    @Test
+    public void compareByNegativeCount_shouldReturnOne() {
+        int[] a = {-5, -4, -3, -2, -1, 0, 1, 2, 3};
+        int[] b = {0, 1, 2, 3, 4, -6, -7, -8, -9};
+        int result = UtilityMethods.compareByNegativeCount(a, b);
+        assertEquals(1, result);
+    }
+
+    @Test
+    public void compareByNegativeCount_shouldReturnMinusOne() {
+        int[] a = {5, 4, -3, -2, -1, 0, 1, 2, 3};
+        int[] b = {0, 1, 2, 3, 4, -6, -7, -8, -9};
+        int result = UtilityMethods.compareByNegativeCount(a, b);
+        assertEquals(-1, result);
+    }
+
+    @Test
+    public void compareByNegativeCount_shouldReturnZero() {
+        int[] a = {-5, -4, -3, -2, -1, 0, 1, 2, 3};
+        int[] b = {0, 1, 2, 3, -4, -6, -7, -8, -9};
+        int result = UtilityMethods.compareByNegativeCount(a, b);
+        assertEquals(0, result);
+    }
+
+    @Test
+    public void compareByNegativeCount_shouldThrowNullPointerException() {
+        int[] a = null;
+        int[] b = {0, 1, 2, 3, 4, -6, -7, -8, -9};
+        assertThrows(NullPointerException.class, () -> UtilityMethods.compareByNegativeCount(a, b));
+    }
+
+    @Test
+    public void compareByNegativeCount_shouldThrowExceptionBecauseArraysHaveDifferentSize() {
+        int[] a = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+        int[] b = {0, 1, 2, 3, 4, -6, -7, -8, -9};
+        assertThrows(IllegalArgumentException.class, () -> UtilityMethods.compareByNegativeCount(a, b));
+    }
+
+    @Test
+    public void compareByOddCount_shouldReturnOne(){
+        int[] a = {-5, -4, -3, -2, -1, 0, 1, 2, 3};
+        int[] b = {0, 1, 2, 3, 4, -6, -7, -8, -9};
+        int result = UtilityMethods.compareByOddCount(a, b);
+        assertEquals(1, result);
+    }
+
+    @Test
+    public void compareByOddCount_shouldReturnMinusOne(){
+        int[] a = {-8, -4, -3, -2, -6, 0, 1, 2, 3};
+        int[] b = {0, 1, 2, 3, 4, -6, -7, -8, -9};
+        int result = UtilityMethods.compareByOddCount(a, b);
+        assertEquals(-1, result);
+    }
+
+    @Test
+    public void compareByOddCount_shouldReturnZero(){
+        int[] a = {-7, -4, -3, -2, -6, 0, 1, 2, 3};
+        int[] b = {0, 1, 2, 3, 4, -6, -7, -8, -9};
+        int result = UtilityMethods.compareByOddCount(a, b);
+        assertEquals(0, result);
+    }
+
+    @Test
+    public void compareByOddCount_shouldThrowNullPointerException() {
+        int[] a = null;
+        int[] b = {-7, -4, -3, -2, -6, 0, 1, 2, 3};
+        assertThrows(NullPointerException.class, () -> UtilityMethods.compareByOddCount(a, b));
+    }
+
+    @Test
+    public void compareByOddCount_shouldThrowExceptionBecauseArraysHaveDifferentSize() {
+        int[] a = { 9, 10, 11, 12};
+        int[] b = {0, 1, 1, 2, 3, 4, 5, 6, 6};
+        assertThrows(IllegalArgumentException.class, () -> UtilityMethods.compareByOddCount(a, b));
     }
 
     @Test

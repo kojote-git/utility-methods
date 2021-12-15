@@ -51,8 +51,8 @@ public final class UtilityMethods {
         return countPositive;
     }
 
-    public static int[] copy(int[] array){
-        checkNotNull(array,"Array is null");
+    public static int[] copy(int[] array) {
+        checkNotNull(array, "Array is null");
         int size = array.length;
         int[] copiedArray = new int[size];
         System.arraycopy(array, 0, copiedArray, 0, size);
@@ -65,6 +65,56 @@ public final class UtilityMethods {
         return (int) Arrays.stream(array)
                 .filter(value -> value < 0)
                 .count();
+    }
+
+    public static int compareByNegativeCount(int[] a, int[] b) {
+        checkNotNull(a, "Your array is empty.");
+        checkNotNull(b, "Your array is empty.");
+
+        if (a.length == b.length) {
+            int first = countNegative(a);
+            int second = countNegative(b);
+            if (first > second) {
+                return 1;
+            }
+            if (first < second) {
+                return -1;
+            } else {
+                return 0;
+            }
+        } else {
+            throw new IllegalArgumentException("Arrays have different sizes");
+        }
+    }
+
+    public static int countOdd(int[] array) {
+        checkNotNull(array, "Array is null");
+        int count = 0;
+        for (int j : array) {
+            if (isOdd(j)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public static int compareByOddCount(int a[], int b[]) {
+        checkNotNull(a, "Array a is null.");
+        checkNotNull(b, "Array b is null.");
+        if (a.length == b.length) {
+            int countA = countOdd(a);
+            int countB = countOdd(b);
+            if (countA > countB) {
+                return 1;
+            }
+            if (countA < countB) {
+                return -1;
+            } else {
+                return 0;
+            }
+        } else {
+            throw new IllegalArgumentException("Arrays have different sizes");
+        }
     }
 
     public static void reverse(int[] array) {
