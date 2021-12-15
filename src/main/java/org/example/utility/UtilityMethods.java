@@ -1,8 +1,8 @@
 package org.example.utility;
 
-import static com.google.common.base.Preconditions.checkNotNull;
 
 import java.util.Arrays;
+import static com.google.common.base.Preconditions.checkNotNull;
 
 public final class UtilityMethods {
     private UtilityMethods() {
@@ -114,6 +114,17 @@ public final class UtilityMethods {
             }
         } else {
             throw new IllegalArgumentException("Arrays have different sizes");
+        }
+    }
+
+    public static void reverse(int[] array) {
+        checkNotNull(array, "Array is null, enter the correct value");
+        int end = array.length - 1;
+        for (int i = 0; i < array.length / 2; i++) {
+            int temp = array[end];
+            array[end] = array[i];
+            array[i] = temp;
+            end--;
         }
     }
 }

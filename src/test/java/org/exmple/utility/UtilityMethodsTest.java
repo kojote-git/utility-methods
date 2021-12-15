@@ -2,8 +2,9 @@ package org.exmple.utility;
 
 import org.example.utility.UtilityMethods;
 import org.junit.Test;
-
+import org.junit.jupiter.api.Assertions;
 import java.util.Arrays;
+import java.util.Collections;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -252,5 +253,13 @@ public class UtilityMethodsTest {
         int[] a = { 9, 10, 11, 12};
         int[] b = {0, 1, 1, 2, 3, 4, 5, 6, 6};
         assertThrows(IllegalArgumentException.class, () -> UtilityMethods.compareByOddCount(a, b));
+    }
+
+    @Test
+    public void reverse_shouldReverseArray() {
+        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int[] check = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
+        UtilityMethods.reverse(array);
+        Assertions.assertArrayEquals(check, array);
     }
 }
