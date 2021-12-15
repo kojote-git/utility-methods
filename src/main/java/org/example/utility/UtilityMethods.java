@@ -68,7 +68,7 @@ public final class UtilityMethods {
     }
 
     public static void reverse(int[] array) {
-        checkNotNull(array);
+        checkNotNull(array, "Array is null, enter the correct value");
         int end = array.length - 1;
         for (int i = 0; i < array.length / 2; i++) {
             int temp = array[end];
