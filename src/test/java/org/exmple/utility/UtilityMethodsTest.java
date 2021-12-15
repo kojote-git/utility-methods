@@ -2,8 +2,7 @@ package org.exmple.utility;
 
 import org.example.utility.UtilityMethods;
 import org.junit.Test;
-
-import java.util.Arrays;
+import org.junit.jupiter.api.Assertions;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
