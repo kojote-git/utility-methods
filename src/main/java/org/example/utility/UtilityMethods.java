@@ -56,7 +56,6 @@ public final class UtilityMethods {
         int size = array.length;
         int[] copiedArray = new int[size];
         System.arraycopy(array, 0, copiedArray, 0, size);
-
         return copiedArray;
     }
 
@@ -140,4 +139,23 @@ public final class UtilityMethods {
         }
         return -1;
     }
+
+    public static int compareByPositiveCount(int[] a, int[] b){
+        checkNotNull(a, "Array is null");
+        checkNotNull(b, "Array is null");
+        if (a.length == b.length) {
+            int countPositiveA = countPositive(a);
+            int countPositiveB = countPositive(b);
+            if (countPositiveA > countPositiveB) {
+                return 1;
+            } else if (countPositiveA < countPositiveB) {
+                return -1;
+            } else {
+                return 0;
+            }
+        } else {
+            throw new IllegalArgumentException("Arrays have different sizes");
+        }
+    }
+
 }
