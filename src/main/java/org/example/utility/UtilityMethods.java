@@ -1,8 +1,8 @@
 package org.example.utility;
 
+import static com.google.common.base.Preconditions.checkNotNull;
 
 import java.util.Arrays;
-import static com.google.common.base.Preconditions.checkNotNull;
 
 public final class UtilityMethods {
     private UtilityMethods() {
@@ -126,5 +126,18 @@ public final class UtilityMethods {
             array[i] = temp;
             end--;
         }
+    }
+
+    public static int findIndex(int[] array, int number) {
+        checkNotNull(array, "Your array is null");
+        int i = 0;
+        while (i < array.length) {
+            if (array[i] == number) {
+                return i;
+            } else {
+                i++;
+            }
+        }
+        return -1;
     }
 }

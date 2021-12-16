@@ -3,8 +3,6 @@ package org.exmple.utility;
 import org.example.utility.UtilityMethods;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
-import java.util.Arrays;
-import java.util.Collections;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -261,5 +259,23 @@ public class UtilityMethodsTest {
         int[] check = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
         UtilityMethods.reverse(array);
         Assertions.assertArrayEquals(check, array);
+    }
+
+    @Test
+    public void findIndex_shouldReturnNine() {
+        int[] a = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+
+        int res = UtilityMethods.findIndex(a, 10);
+
+        assertEquals(9, res);
+    }
+
+    @Test
+    public void findIndex_shouldReturnNegativeNumber() {
+        int[] a = {1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12};
+
+        int res = UtilityMethods.findIndex(a, 10);
+
+        assertEquals(-1, res);
     }
 }
