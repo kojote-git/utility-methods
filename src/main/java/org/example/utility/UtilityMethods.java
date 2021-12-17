@@ -140,7 +140,7 @@ public final class UtilityMethods {
         return -1;
     }
 
-    public static int compareByPositiveCount(int[] a, int[] b){
+    public static int compareByPositiveCount(int[] a, int[] b) {
         checkNotNull(a, "Array is null");
         checkNotNull(b, "Array is null");
         if (a.length == b.length) {
