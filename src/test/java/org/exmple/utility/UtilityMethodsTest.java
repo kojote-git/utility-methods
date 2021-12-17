@@ -278,4 +278,42 @@ public class UtilityMethodsTest {
 
         assertEquals(-1, res);
     }
+
+    @Test
+    public void compareByPositiveCount_shouldReturnZero() {
+        int[] a = {1, 1, -3, 8, 7, 0, 3, -9, -6};
+        int[] b = {0, 1, -2, -3, 4, 6, 7, 8, -9};
+        int result = UtilityMethods.compareByPositiveCount(a, b);
+        assertEquals(0, result);
+    }
+
+    @Test
+    public void compareByPositiveCount_shouldReturnOne() {
+        int[] a = {1, 1, 3, 8, -7, 0, 3, 9, 6};
+        int[] b = {0, 1, 2, 3, 4, -6, -7, -8, -9};
+        int result = UtilityMethods.compareByPositiveCount(a, b);
+        assertEquals(1, result);
+    }
+
+    @Test
+    public void compareByPositiveCount_shouldReturnMinusOne() {
+        int[] a = {1, 1, -3, 8, -7, 0, -3, -9, -6};
+        int[] b = {0, 1, 2, 3, 4, 6, 7, 8, -9};
+        int result = UtilityMethods.compareByPositiveCount(a, b);
+        assertEquals(-1, result);
+    }
+
+    @Test
+    public void compareByPositiveCount_shouldThrowIllegalArgumentException() {
+        int[] a = {0, 1, 2, 3, 4, -6, -7, -8, -9, 12, 23};
+        int[] b = {0, 1, 2, 3, 4, -6, -7, -8, -9};
+        assertThrows(IllegalArgumentException.class, () -> UtilityMethods.compareByPositiveCount(a, b));
+    }
+
+    @Test
+    public void compareByPositiveCount_shouldThrowNullPointerException() {
+        int[] a = null;
+        int[] b = {0, 1, 2, 3, 4, -6, -7, -8, -9};
+        assertThrows(NullPointerException.class, () -> UtilityMethods.compareByPositiveCount(a, b));
+    }
 }
